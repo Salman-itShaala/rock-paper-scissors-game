@@ -4,15 +4,16 @@ const computerChoiceContainer = document.getElementById("computer-choice");
 const resultContainer = document.getElementById("result");
 
 function selectRock() {
-  // userChoice = "rock"
   const userChioce = "rock";
 
+  // updating dom
   userChoiceContainer.innerText = "Your choice : Rock (🪨)";
 
   // computer choice --> generate
 
   const computersChoice = getComputersChoice();
 
+  // updating dom
   computerChoiceContainer.innerHTML = "Computers choice : " + computersChoice;
 
   // check who won
@@ -20,14 +21,14 @@ function selectRock() {
 }
 
 function selectPaper() {
-  userChoiceContainer.innerText = "Your choice : Paper (📄)";
   // userChoice = "rock"
   const userChioce = "paper";
+  //updating dom
+  userChoiceContainer.innerText = "Your choice : Paper (📄)";
 
   // computer choice --> generate
-
   const computersChoice = getComputersChoice();
-
+  // updating dom
   computerChoiceContainer.innerHTML = "Computers choice : " + computersChoice;
 
   // check who won
@@ -36,25 +37,26 @@ function selectPaper() {
 
 function selectScissors() {
   // userChioce = "scissors"
-  userChoiceContainer.innerText = "Your choice : Scissors (✂️)";
-  // userChoice = "rock"
   const userChioce = "scissors";
+  // updating dom
+  userChoiceContainer.innerText = "Your choice : Scissors (✂️)";
 
   // computer choice --> generate
-
   const computersChoice = getComputersChoice();
-
+  // updating dom
   computerChoiceContainer.innerHTML = "Computers choice : " + computersChoice;
 
   // check who won
   checkWhoWon(userChioce, computersChoice);
 }
 
+// function to get computers choice
 function getComputersChoice() {
   let randomIndex = Math.floor(Math.random() * options.length); // 0 , 1, 2
   return options[randomIndex];
 }
 
+// function to check who won
 function checkWhoWon(usersChioce, computersChoice) {
   if (
     (usersChioce === "rock" && computersChoice === "scissors") ||
